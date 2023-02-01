@@ -1,0 +1,83 @@
+body
+{
+background:white;
+}
+
+
+/* CONTACT US PAGE - Categories Table 2*/
+
+#contactUsTable
+{ 
+overflow: auto;
+position:relative; 
+z-index: 1;
+top:95px;
+left:0px;
+width:auto ;
+border:none;
+
+background:  white;
+font-size:25px;
+font-family:Book Antiqua; 
+font-weight:bold;
+vertical-align:top;
+text-align:center;
+padding:20px;
+}
+
+#contactUsTable td 
+{
+background:transparent;
+border:none;
+}
+
+#contactUsTable input
+{
+border:outset;
+border-radius: 10px;
+
+border-color: black;
+color:black;
+text-align:center;
+cursor:pointer;
+}
+
+#contactUsTable textarea
+{
+border-radius: 10px;
+cursor:pointer;
+border-width:7px;
+border:outset;
+border-color:black;
+}
+
+#contactUsTable button
+{
+font-size:25px;
+font-family:Book Antiqua; 
+font-weight:bold;
+border-radius: 10px;
+width:200px;
+cursor:pointer;
+background:  white;
+}
+
+/* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue transparent;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: blue;
+  border-radius: 20px;
+  border: 3px solid transparent;
+}

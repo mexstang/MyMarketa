@@ -1,0 +1,75 @@
+
+#formTable
+{ 
+position:absolute;
+top:85px;
+width:99%;
+height:100%;
+background:linear-gradient(white,white ,darkgreen ); 
+text-align:center;
+}
+
+
+#formTable td 
+{
+background:transparent;
+border:none;
+font-size:25px;
+color:black;
+font-family:Book Antiqua;
+font-weight:bold;
+width:100%;
+vertical-align:top;
+text-align:center;
+}
+
+
+
+.location
+{
+background:transparent;
+border:none;
+color:black;
+font-size:25px;
+font-family:Book Antiqua;
+font-weight:bold;
+text-shadow: 1px 0px white;
+text-align:left;
+}
+
+input
+{
+background:transparent;
+border:none;
+border-radius:15px;
+color:black;
+font-size:25px;
+font-family:Book Antiqua;
+font-weight:bold;
+text-align:center;
+cursor:pointer;
+padding:10px;
+}
+
+a
+{
+background:transparent;
+border:none;
+color:black;
+font-size:25px;
+font-family:Book Antiqua;
+font-weight:bold;
+cursor:pointer;
+text-decoration:none;
+}
+
+label
+{
+background:transparent;
+border:none;
+color:black;
+font-size:25px;
+font-family:Book Antiqua;
+font-weight:bold;
+cursor:pointer;
+}

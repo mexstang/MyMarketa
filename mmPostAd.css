@@ -1,0 +1,136 @@
+html
+{
+
+overflow-y: scroll;
+overflow-x:hidden;
+}
+body
+{
+background:white;
+overflow-y: hidden;
+overflow-x:hidden;
+}
+
+#loadingDiv
+{ 
+    position:absolute;
+position:relative;
+visibility:hidden;
+z-index: 7;
+
+width:100% ;
+height:100%;
+background: transparent;
+}
+
+
+
+#formTable
+{ 
+overflow-y: auto;
+overflow-x:hidden;
+position:relative; 
+z-index: 1;
+top:75px;
+left:0px;
+width:50% ;
+height:100%;
+border:none;
+}
+
+
+#formTable td 
+{
+background:  white;
+width:99%;
+border:none;
+
+vertical-align:top;
+text-align:center;
+font-size:25px;
+font-family:Book Antiqua;
+font-weight:bold;
+}
+
+#formTable img
+{ 
+max-width:500px ;
+max-height:450px;
+border:outset;
+box-shadow: 1px 2px 5px 1px;
+}
+
+select
+{
+width:500px ;
+text-align:center;
+color:black;
+background:transparent;
+opacity:1;
+border:solid;
+border-color:darkred;
+border-width:1px;
+font-size:25px;
+font-family:Book Antiqua;
+cursor:pointer;
+border-radius: 5px;
+}
+
+
+
+input
+{width:500px ;
+color:black;
+background:transparent;
+opacity:1;
+border:solid;
+border-color:darkred;
+border-width:1px;
+font-size:25px;
+font-family:Book Antiqua;
+font-weight:bold;
+text-align:center;
+cursor:pointer;
+
+border-radius: 5px;
+}
+
+textarea
+{
+width:500px ;    
+color:black;
+background:transparent;
+opacity:1;
+border:solid;
+border-color:darkred;
+border-width:1px;
+font-size:25px;
+font-family:Book Antiqua;
+font-weight:bold;
+text-align:center;
+cursor:pointer;border-radius: 5px;
+}
+
+
+
+
+
+/* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue transparent;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: blue;
+  border-radius: 20px;
+  border: 3px solid transparent;
+}

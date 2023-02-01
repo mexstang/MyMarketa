@@ -1,0 +1,195 @@
+html
+{
+    overflow-x: hidden;  
+overflow-y: scroll;
+width: 100%;
+}
+
+body
+{
+    
+background:white;
+overflow-x: hidden;  
+overflow-y: scroll;
+width: 100%;
+
+}
+
+
+/* LIVE INDIVIDUAL ADS Page - Categories Table 2*/
+
+#singleAdDiv
+{
+z-index: 1;
+position:absolute;  
+top:65px;
+left:2px;
+width:98%;
+border:none;
+ 
+padding:5px;
+text-align:center;
+}
+
+
+#singleAdDiv label
+{ 
+border:none;
+background:transparent;
+font-size:30px;
+font-family:Book Antiqua;
+font-weight:bold; 
+}
+
+#singleAdDiv textarea
+{ 
+overflow:hidden;
+width:500px;
+height:auto;
+text-align:left;
+border:none;
+word-wrap: break-word;
+background:transparent;
+font-size:30px;
+font-family:Book Antiqua;
+text-transform: uppercase;
+text-align:center; 
+}
+
+
+#singleAdDiv a
+{  
+font-size:30px;
+font-family:Book Antiqua;
+font-weight:bold;
+
+}
+
+
+#singleAdDiv img
+{
+margin: 2px;
+border:outset;
+border-radius:  50px;
+max-width:550px;
+max-height:550px;
+height: auto;  
+ box-shadow:2px 3px 5px 1px;
+}
+
+
+/* CHAT   ------------------------------------------------- */
+#sendMessageButtonDiv
+{
+z-index: 4;
+position:fixed;  
+top:100px;
+right:25px;
+border:none;
+border-radius: 5px;
+background: transparent;
+padding:2px; 
+
+}
+
+#chatDiv
+{
+z-index: 5;
+position:fixed; 
+top:98px;
+right:25px;
+width:475px;
+height:auto;
+border:outset;
+border-width:4px;
+border-radius: 13px 13px 15px 15px;
+background:  white ; 
+padding:10px;
+visibility:hidden;
+text-align:left;
+font-size:17px;
+font-family:book antiqua;
+font-weight:bold;
+box-shadow:1px 1px 7px gray ;
+ 
+}
+
+#chatMessageBox
+{
+overflow-y:scroll;
+overflow-x:none;
+padding:2px;
+width: 465px;
+height:100px;
+
+border:outset;
+border-radius: 10px 10px 5px 5px;
+
+background-image: linear-gradient(white, white, grey );
+resize: none;
+font-size:20px;
+font-family:book antiqua;
+margin-top:5px;
+
+box-shadow:1px 1px 4px gray ;
+}
+
+
+#chatBuyerEmail
+{
+overflow-y:scroll;
+overflow-x:none;
+
+width: 465px;
+height:55px;
+border-radius: 5px 5px 5px 5px;
+background-image: linear-gradient(white, white, grey );
+resize: none;
+font-size:20px;
+font-family:book antiqua;
+box-shadow:1px 1px 4px gray ;
+}
+
+
+#chatButton
+{ 
+    float:right;
+cursor:pointer;
+vertical-align:top;
+padding:2px;
+width: 80px;
+height:50px;
+border:outset;
+border-width : 4px;
+border-radius: 25px 25px 25px 25px;
+ background-image: linear-gradient( to right, darkred , white , darkred ); 
+font-size:15px;
+font-family:book antiqua;
+font-weight:bold;margin-top:4px;
+
+box-shadow:1px 1px 5px gray ;
+}
+
+
+/* END CHAT */
+
+
+/* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: black transparent;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 20px;
+  border: 3px solid transparent;
+}

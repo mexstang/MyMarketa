@@ -1,0 +1,150 @@
+html
+{
+overflow-x: hidden;  
+
+width: 100%;
+height: 100%;
+position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+body
+{
+  
+background:white;
+
+width: 100%;
+height: 100%;
+position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+
+}
+
+
+
+
+/*  LIVE ADS MAIN TABLE */
+
+#liveAdsMainDiv
+{ 
+position:absolute; 
+z-index: 1;
+top:90px;
+
+width: 99%;
+height:auto;
+border:none;
+
+text-align:center;
+padding-left:70px;
+
+}
+
+.subDivsClass
+{ 
+float:left;
+z-index: 1;
+width: 300px;
+height:auto;
+
+text-align:center;
+text-transform: capitalize;
+background:transparent;
+margin:10px;
+color:black;
+
+}
+
+.adDivClass
+{ 
+color:black;
+border:outset;
+border-radius: 3px 4px 4px 3px;
+width: 300px;
+height:400px;max-width:300px;
+max-height:400px;
+text-align:center;
+font-family:Book Antiqua;
+font-weight:Bold; 
+font-size:25px;
+text-transform: capitalize;
+background:white;
+margin:10px;
+cursor:pointer;
+box-shadow: 1px 1px 2px gray;
+}
+
+a
+{  
+cursor:pointer; 
+width: 248px;
+border:none;
+color:black;
+text-decoration:none;
+}
+
+label
+{  
+cursor:pointer; 
+width: 248px;
+border:none;
+color:black;
+
+}
+textarea
+
+{ 
+color:black;
+width: 248px;
+border:none;
+background:transparent;
+text-align:center;
+text-transform: capitalize;
+font-family:Book Antiqua;
+font-size:25px;
+overflow-x: hidden;  
+overflow-y: scroll;
+resize: none;
+
+}
+
+.adDivPicClass 
+{ 
+ 
+cursor:pointer;
+width: 292px;
+height:205px;
+max-width:300px;
+max-height:205px;
+border:outset;
+
+box-shadow: 1px 2px 2px gray;
+
+}
+/* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+  scrollbar-width: thin;
+  scrollbar-color:  black transparent ;
+  
+}
+
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 20px;
+  border: 3px solid transparent;
+}
