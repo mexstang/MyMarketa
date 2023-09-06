@@ -1,30 +1,37 @@
-<html>
+<!DOCTYPE html>
+<html lang='en'>
 <head>
 <title>MyMARKETA.com POST AD </title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" type="text/css" href="mmPostAd.css">
+<meta  charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0' >
+<link rel="stylesheet" type="text/css" href="mm1Main.css">
+
+<script src="mmHeader.js"></script> 
 <script src="mmPostAd.js"></script> 
-
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> -->
 </head>
-<body  >
-<?php include 'mmHeader.php'; ?>
 
-<center>
-    <table id='formTable'   >
-        <tr><td>
-		
-<form  id='mmPostForm'  method='post'   action='https://www.mimarketa.com/mmMain/mmEnglish/mmPostAd2.php?' enctype='multipart/form-data' accept-charset="utf-8" name="mmPostForm">
-<input  id='countryBox2' type='hidden' name='country'  value='' >
-<input  id='passCounty2' type='hidden' name='county'  value='' >
-<input  id='passState2' type='hidden' name='state'  value='' >
+<body onload='loadLocation()'  >
+    
+<div id='wrapper'  class='wrapper' >  
+<div class='container1' >
+<header   id='header'  class='header' > <?php include 'mmHeader.php'; ?></header>     
+    </div> 
+ 
+    <div class='container2' >
+<main> 
+<section class='postSection'>
+<form  id='mmPostForm'  method='post'   action='https://www.mimarketa.com/mmMain/mmEnglish/mmPostAd2.php?' enctype='multipart/form-data' name="mmPostForm">
+<input  id='countryBox2' type='hidden' name='country'  value='US' >
+<input  id='countyBox' type='hidden' name='countyBox'  value='' >
+<input  id='stateBox' type='hidden' name='stateBox'  value='' >
 <input  id='hidden_data1' type='hidden' name='hidden_data1'  value='noFoto' >
 <input  id='hidden_data2' type='hidden' name='hidden_data2'  value='noFoto' >
 <input  id='hidden_data3' type='hidden' name='hidden_data3'  value='noFoto' >
 
-<label id='heading' style='font-size:30px;font-family:book antiqua;' >Post An Ad</label>
-<br/><br/>
-
- <select id='categoria' name='categoria'    onmouseover='postBgColorOn(this)' onmouseout='postBgColorOff(this)'  onchange='changeFontColor(this)'>
+<label id='heading' ><h2>Post An Ad</h2></label>
+<br/>
+ <select id='categoria' name='categoria' >
  <option value='CATEGORY'>CATEGORY</option>
   <option value='ANTIQUES'>ANTIQUES</option>
   <option value='APPLIANCES'>APPLIANCES</option>
@@ -87,39 +94,38 @@
   
 </select> 
   <br/>  <br/>
-Title   <br/>
-  <input  id='titulo' type='text' name='title' maxlength='15' size='30'   required   onchange='changeFontColor(this)' value='' style='border:solid;border-color:darkred;border-width:1px;' >
+<label for='title' >Title </label>  <br/>
+<input  id='titulo' type='text' name='title' maxlength='15' size='30'   required   value=''  >
 <br/>  <br/>
-Price
+<label l for='price' >Price</label>
 <br/>
-  <input   id='precio'   type='number' name='price' maxlength='15' size='30'   required    onchange='changeFontColor(this)'  value='0'  style='border:solid;border-color:darkred;border-width:1px;'  >
- <br/>  <br/>City
- <br/>
-  <input  id='ciudad'   type='text' name='ciudad' maxlength='80' size='30' required   onchange='changeFontColor(this)' value=''  style='border:solid;border-color:darkred;border-width:1px;' >
-  <br/>  <br/>Details
-  <br/>
-   <textarea  id='description'  name='description' maxlength='300' cols='50' rows='2' required   onchange='changeFontColor(this)'  style='border:solid;border-color:darkred;border-width:1px;'  ></textarea>
-   <br/>  <br/>
-   Email
-   <br/>
+<input   id='precio'   type='number' name='price' maxlength='15' size='30'   required     value='0'    >
+<br/>  <br/>
+<label l for='city' >City</label>
+<br/>
+<input  id='ciudad'   type='text' name='ciudad' maxlength='80' size='30' required   value=''  >
+<br/>  <br/>
+<label l for='description' >Details</label>
+<br/>
+<textarea  id='description'  name='description' maxlength='300' cols='50' rows='2' required     ></textarea>
+<br/><br/>
+<label for='ecorreo'>Email</label>
+<br/>
    
-   <input  id='ecorreo'  name='ecorreo'  required    onchange='changeFontColor(this)' style='border:solid;border-color:darkred;border-width:1px;cursor:pointer;color:darkred;text-shadow:1px 1px 1px gray;font-weight:bold;'    value='' >
+<input  id='ecorreo'  name='ecorreo'  required       value='' >
 <br/>
-<label style='font-size:15px;color:maroon; text-shadow:1px 1px 1px gray;' >(Your Email will not be shown or shared with anyone.)</label> 
+<label >(Your Email will not be shown or shared with anyone.)</label> 
+<br/> <br/>
+<label>Video: (Paste a link to your video.)</label> <br/>
+<input  id='videoLink'   type='text' name='videoLink' maxlength='80' size='30'   value=''  >
+<br/><br/>
+<label > Pic (Optional)</label> <br/> 
+
+<img src="" id="output_image1"       /> 
  <br/>
-
-  <br/>
-<b style='color:black;font-size:30px; text-shadow: 1px 1px 1px gray;cursor:pointer;font-weight:bold;padding:5px;' > Pic (Optional)</b>  <br/> <br/> 
-
-<img src="" id="output_image1" style='border:outset;border-width:2px;border-radius: 10px;border-color:black; '       /> 
- <br/>
-<input  id='userfile1'   name='userfile1'  style='color:black;font-size:20px; text-shadow: 1px 1px 1px gray;cursor:pointer;font-weight:bold;padding:5px;'  type="file"   onchange="preview_image1(event) "    title='CLICK TO ADD A FOTO.'accept="image/*"  >
-
+<input  id='userfile1'   name='userfile1'    type="file"   onchange="preview_image1(event) "   accept="image/*"  >
 	
-<label  id='pic1' onclick='resetImage(id)' style='color:darkred;font-size:30px; text-shadow: 1px 1px 1px black;
-cursor:pointer;font-weight:bold;;'     >X</label> &nbsp;&nbsp;&nbsp;
-<br/> 
-<br/> 
+<label  id='pic1' onclick='resetImage(id)'   > X</label> &nbsp;&nbsp;&nbsp;
 
 <!--
 <img src="" id="output_image2" style='border:outset;border-width:2px;border-radius: 10px;border-color:black; '     /> 
@@ -137,32 +143,42 @@ cursor:pointer;font-weight:bold;;'     >X</label> &nbsp;&nbsp;&nbsp;
 <label   id='pic3' onclick='resetImage(id)' style='color:darkred;font-size:30px; text-shadow: 1px 1px 1px black;border:none;cursor:pointer;font-weight:bold;padding:5px;'    >X</label>  &nbsp;&nbsp;&nbsp;
 
 -->
+<br/><br/> 
+ <button id='nextButton'  title='CLICK WHEN YOU ARE DONE FILLING OUT ALL FIELDS.'  onclick='valForm()'  >DONE</button><br/> 
+</form> 
 
+ </section>
+</main>
+</div>  
 
-
-
-<br/>
-
-Video: (Paste a link to your video.)
-  <input  id='videoLink'   type='text' name='videoLink' maxlength='80' size='30' required  onchange='changeFontColor(this)' value='' style='border:solid;border-color:darkred;' >
-  <br/>
+<!-- CONTAINER 3 -->
+<div class='container3' >
+<script>getLocation();</script> 
   
- <br/>
- 
-
-<input type="button" id='nextButton'  value="DONE" title='CLICK WHEN YOU ARE DONE FILLING OUT ALL FIELDS.'  onclick='valForm()'   
-style='width:150px;background:linear-gradient( to right, darkgreen, white, darkgreen  );font-size:35px;
-border-radius: 10px;cursor:pointer;color:black;text-shadow:1px 1px 1px gray;font-weight:bold;font-family:book antiqua;padding:20px;'    onmouseover='postBgColorOn(this)' onmouseout='postBgColorOff(this)' >
-</form>
- </td></tr></table> </center>
-
-  
- <script>getLocation();</script> 
-  
-   
 <canvas style='visibility:hidden;border:outset;' width="80" height="80" id="canvas">canvas</canvas>
 
-<div id="loadingDiv" style='position:absolute;left:0px;top:0px;z-index:5;text-align:center;font-size:75px;font-weight:bold;font-family:book antiqua;width:100%;height:300%;background:grey;opacity:.7;visibility:hidden;'  ><br/><br/>Please wait.<br /><br/>Uploading Ad.........<br/><br/><br/><br/><br/><br/></div>
+
+
+<footer>   <?php include 'mmFooter.php'; ?>  </footer>
+</div>
+</section>
+
+</div>  
+<div id="loadingDiv"   style='background:red;visibility:visible;height:100%;' ><br/><br/>Please wait.<br /><br/>Uploading Ad.........<br/><br/><br/><br/><br/><br/></div>
+ 
+<script> 
+getLocation();
+
+</script>
+
+<script> 
+checkViewportWidth();
+
+</script>
+<script> 
+
+css();
+</script>
 
 </body>
 </html>

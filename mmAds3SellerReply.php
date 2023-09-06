@@ -1,8 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 <head>
 <title>MyMARKETA.com SELLER REPLY PAGE </title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta charset='utf-8'>
+<meta name='viewport' content='width=width-device, initial-scale=1.0' >
+<link rel="stylesheet" type="text/css" href="mmAdsMessageReply.css">
+<link rel="stylesheet" type="text/css" href="mmHeader.css">
+<link rel="stylesheet" type="text/css" href="mmFooter.css">
+<script src="mmHeader.js"></script> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
 <script >
 function sendMessage1() 
 {
@@ -48,13 +56,14 @@ window.location.replace('https://www.mimarketa.com/mmMain/mmEnglish/mmEnglish.ph
 </script> 
 
 </head>
-<body   >
-    
-    
-<?php include 'mmHeader.php'; ?>
-  <br/><br/><br/><br/><br/><br/>
-<div id='coverMasthead' style='position:absolute;top:0;left:0;z-index:5;background:transparent; color:transparent; cursor:pointer;width:100%;height:100px;'  onclick='redirectHome()'   ></div>    
-    
+<body >
+    <div class='header' >
+    <div class='container1' >
+        <header><?php include 'mmHeader.php'; ?></header>
+    </div>
+    <div class='container2' >
+        <main>
+            <section id='messageSection' >
     
 <?php
 //Get URL Vars
@@ -93,7 +102,7 @@ $conn2->close();
 $gotMessage='yes';
 
 echo"<center>
-<b>BUYER MESSAGE </b><br/>
+<label  >BUYER MESSAGE </label><br/>
 <input type='hidden' id='sessionIdBox' value='$sessionId' >
 <input type='hidden' id='titleBox' value='$title' >
 <input type='hidden' id='buyerEmailBox' value='$buyerEmail' >
@@ -106,17 +115,12 @@ echo"<center>
 <br>
 
 <textarea  id='messageBox'  
- required maxlength='100'  rows='5' cols='50'   wrap='hard'  readonly style='background:#DDE5DC;color:black;border:outset;font-size:17px;border-radius:3px;'  >$buyerMessage1</textarea>
+ required maxlength='100' rows='4' wrap='hard'  readonly  >$buyerMessage1</textarea>
  <br/> 
  <textarea  id='replyBox'  
- required maxlength='100'  rows='5' cols='50'  wrap='hard'  style='background:white;color:black;border:outset;font-size:17px;'    ></textarea>
+ required maxlength='100' rows='4' wrap='hard'     ></textarea>
 <br/>
-<input id='messageButton'  type='button' onclick='sendMessage1()' value='REPLY' style='background:#B3CBAF;color:black;border:outset;font-size:25px;'    > </center><br/><br/>";
-
-
-
-
-
+<button id='messageButton'  type='button' onclick='sendMessage1()'   >REPLY </button";
 
 
 }else
@@ -126,7 +130,10 @@ echo "Sorry. Record not found.";
 }
 
 ?>
-
+</section>
+</main>
+</div>
+</div>
 
 </body>
 </html>

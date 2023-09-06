@@ -1,15 +1,22 @@
-<html>
+<!DOCTYPE html>
+<html lang='en'>
 <head>
 <title>MyMarketa.com - LIVE ADS</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta charset='utf-8' >
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="shortcut icon" href="https://www.mimarketa.com/mmMain/mmEnglish/mmFotos/mmMastheadPic.png" alt="MYMARKETA.COM" type="image/x-icon" />
-<link rel="stylesheet" type="text/css" href="mmLiveAds.css">
-<script src="mmLiveAds.js"></script> 
+<link rel="stylesheet" type="text/css" href="mm1Main.css">
+
 </head>
-
-<body  >
-<?php include 'mmHeader.php';?>
-
+<body onload='loadLocation()'  >
+<div id='wrapper' class='wrapper' >
+    <div class='container1' >
+<header id='header' class='header' ><?php include 'mmHeader.php';?></header>
+</div>
+<div class='container2' >
+<main>
+<section id='adsSection'>
+   
 <?php
 $servername = "localhost";
 $username = "u302929136_mexstang";
@@ -18,7 +25,6 @@ $dbname = "u302929136_MiMarketaDb";
 $adsTable = "enAdsTable";
 $currentDate= date("Y-m-d");
    
-
 // Open DB and DELETE all records for that county and state, 30 days+ old.
 $connDelete = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -26,19 +32,15 @@ if ($connDelete->connect_error) {
   die("Connection failed: " . $connDelete->connect_error);
 }
 
-// sql to delete a record
+// OPEN DB AND DELETE ALL ADS OVER 30 DAYS.
 $sqlDelete = "DELETE FROM $adsTable WHERE adDate < DATE_SUB('$currentDate', INTERVAL 30 DAY)  ";
 
 if ($connDelete->query($sqlDelete) === TRUE) {
-  echo "Record deleted successfully";
+  $connDelete->close();
 } else {
   echo "Error deleting record: " . $connDelete->error;
 }
-
 $connDelete->close();
-
-
-
 
 //PHP-> Get Variables from URL to determine User Location++    
 $state=$_GET['state'];
@@ -50,24 +52,21 @@ $searchBox=$_GET['searchBox'];
 $sortBy=$_GET['sortBy'];
 $searchParameter=$_GET['searchParameter'];
 
-
 print "<input class='location'  id='passCounty2' readonly  type='hidden' value='' name='county2'>
 <input class='location'  id='passState2' readonly  type='hidden' value='' name='state2' >";
 
-// Open DB and load all records for that county and state
+// OPEN DB AND GET ALL ADS THAT MEET CRITERIA.
 $conn = new mysqli($servername, $username, $password, $dbname);
-
+//BEGIN SQL SEARCH SWITCH
 if ($conn->connect_error) 
 { die("Connection failed: " . $conn->connect_error); }    
 
-
-    
     switch ($searchParameter) {
    
      case '1':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND   (adActive= '1' OR adActive='3' ) AND  adTitle LIKE '%$searchBox%'     ORDER BY tiempo DESC ";
+             AND   adActive= '1'  AND  adTitle LIKE '%$searchBox%'     ORDER BY tiempo DESC ";
 
     
     break;
@@ -76,21 +75,21 @@ if ($conn->connect_error)
      case '2':
          
      $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   AND  adCity='$adCity'  
-             AND   (adActive= '1' OR adActive='3' ) AND  adTitle LIKE '%$searchBox%'  ORDER BY tiempo DESC ";
+             AND   adActive= '1'  AND  adTitle LIKE '%$searchBox%'  ORDER BY tiempo DESC ";
 
     break;
     
      case '3':
          
      $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   AND  adCategory='$adCategory'  
-             AND   (adActive= '1' OR adActive='3' ) AND  adTitle LIKE '%$searchBox%'  ORDER BY tiempo DESC ";
+             AND   adActive= '1'AND  adTitle LIKE '%$searchBox%'  ORDER BY tiempo DESC ";
 
     break;
     
      case '4':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND   (adActive= '1' OR adActive='3' )  ORDER BY tiempo DESC ";
+             AND   adActive= '1'   ORDER BY tiempo DESC ";
 
     
     break;
@@ -99,35 +98,35 @@ if ($conn->connect_error)
      case '5':
          
      $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'  AND  adCity='$adCity'  
-             AND   (adActive= '1' OR adActive='3' )   ORDER BY tiempo DESC ";
+             AND  adActive= '1'  ORDER BY tiempo DESC ";
 
     break;
       
      case '6':
          
      $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'    
-              AND  adCategory='$adCategory'     AND   (adActive= '1' OR adActive='3' )   ORDER BY tiempo DESC ";
+              AND  adCategory='$adCategory'     AND  adActive= '1'   ORDER BY tiempo DESC ";
 
     break;
    
      case '7':
         
      $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'    AND  adCity='$adCity'    AND  adCategory='$adCategory'  
-             AND   (adActive= '1' OR adActive='3' )   ORDER BY tiempo DESC ";
+             AND   adActive= '1'   ORDER BY tiempo DESC ";
 
     break;
  
     case '8':
         
      $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'    AND   adCategory='$adCategory'  
-             AND   (adActive= '1' OR adActive='3' ) AND  adTitle LIKE '%$searchBox%'     ORDER BY tiempo DESC ";
+             AND   adActive= '1' AND  adTitle LIKE '%$searchBox%'     ORDER BY tiempo DESC ";
 
     break;
  
     case '9':
         
      $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   AND  adCity='$adCity'     AND   adCategory='$adCategory'  
-             AND   (adActive= '1' OR adActive='3' ) AND  adTitle LIKE '%$searchBox%'     ORDER BY tiempo DESC ";
+             AND   adActive= '1'  AND  adTitle LIKE '%$searchBox%'     ORDER BY tiempo DESC ";
 
     break;
  
@@ -135,7 +134,7 @@ if ($conn->connect_error)
      case '10':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND   (adActive= '1' OR adActive='3' )  ORDER BY adCity ASC ";
+             AND   adActive= '1'  ORDER BY adCity ASC ";
 
     
     break;
@@ -143,7 +142,7 @@ if ($conn->connect_error)
     case '11':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND   (adActive= '1' OR adActive='3' )  ORDER BY adCity DESC ";
+             AND   adActive= '1'   ORDER BY adCity DESC ";
 
     
     break;
@@ -151,7 +150,7 @@ if ($conn->connect_error)
      case '12':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND adCategory='$adCategory' AND (adActive= '1' OR adActive='3' )  ORDER BY adCity ASC ";
+             AND adCategory='$adCategory' AND adActive= '1' ORDER BY adCity ASC ";
 
     
     break;
@@ -159,7 +158,7 @@ if ($conn->connect_error)
     case '13':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND adCategory='$adCategory' AND   (adActive= '1' OR adActive='3' )  ORDER BY adCity DESC ";
+             AND adCategory='$adCategory' AND   adActive= '1'   ORDER BY adCity DESC ";
 
     
     break; 
@@ -169,7 +168,7 @@ if ($conn->connect_error)
      case '14':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND   (adActive= '1' OR adActive='3' )  ORDER BY adPrice ASC ";
+             AND   adActive= '1'   ORDER BY adPrice ASC ";
 
     
     break;
@@ -177,7 +176,7 @@ if ($conn->connect_error)
     case '15':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND   (adActive= '1' OR adActive='3' )  ORDER BY adPrice DESC ";
+             AND   adActive= '1' OR   ORDER BY adPrice DESC ";
 
     
     break;
@@ -185,7 +184,7 @@ if ($conn->connect_error)
      case '16':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND adCategory='$adCategory' AND (adActive= '1' OR adActive='3' )  ORDER BY adPrice ASC ";
+             AND adCategory='$adCategory' AND adActive= '1'   ORDER BY adPrice ASC ";
 
     
     break;
@@ -193,7 +192,7 @@ if ($conn->connect_error)
     case '17':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND adCategory='$adCategory' AND   (adActive= '1' OR adActive='3' )  ORDER BY adPrice DESC ";
+             AND adCategory='$adCategory' AND   adActive= '1'  ORDER BY adPrice DESC ";
 
     
     break; 
@@ -202,7 +201,7 @@ if ($conn->connect_error)
      case '18':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND   (adActive= '1' OR adActive='3' )  ORDER BY tiempo ASC ";
+             AND   adActive= '1'   ORDER BY tiempo ASC ";
 
     
     break;
@@ -210,7 +209,7 @@ if ($conn->connect_error)
     case '19':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND   (adActive= '1' OR adActive='3' )  ORDER BY tiempo DESC ";
+             AND   adActive= '1'  ORDER BY tiempo DESC ";
 
     
     break;
@@ -218,7 +217,7 @@ if ($conn->connect_error)
      case '20':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND adCategory='$adCategory' AND (adActive= '1' OR adActive='3' )  ORDER BY adTime ASC ";
+             AND adCategory='$adCategory' AND adActive= '1'   ORDER BY adTime ASC ";
 
     
     break;
@@ -226,7 +225,7 @@ if ($conn->connect_error)
     case '21':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND adCategory='$adCategory' AND   (adActive= '1' OR adActive='3' )  ORDER BY adTime DESC ";
+             AND adCategory='$adCategory' AND   adActive= '1'  ORDER BY adTime DESC ";
 
     
     break; 
@@ -235,7 +234,7 @@ if ($conn->connect_error)
      case '22':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND   (adActive= '1' OR adActive='3' )  ORDER BY adTitle ASC ";
+             AND   adActive= '1'  ORDER BY adTitle ASC ";
 
     
     break;
@@ -243,7 +242,7 @@ if ($conn->connect_error)
     case '23':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND   (adActive= '1' OR adActive='3' )  ORDER BY adTitle DESC ";
+             AND   adActive= '1'   ORDER BY adTitle DESC ";
 
     
     break;
@@ -251,7 +250,7 @@ if ($conn->connect_error)
      case '24':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND adCategory='$adCategory' AND (adActive= '1' OR adActive='3' )  ORDER BY adTitle ASC ";
+             AND adCategory='$adCategory' AND adActive= '1'  ORDER BY adTitle ASC ";
 
     
     break;
@@ -259,7 +258,7 @@ if ($conn->connect_error)
     case '25':
          
     $sql  = "SELECT * FROM $adsTable WHERE   adCountry='$country' AND adCounty='$county' AND  adState='$state'   
-             AND adCategory='$adCategory' AND   (adActive= '1' OR adActive='3' )  ORDER BY adTitle DESC ";
+             AND adCategory='$adCategory' AND   adActive= '1'   ORDER BY adTitle DESC ";
 
     
     break; 
@@ -269,16 +268,11 @@ if ($conn->connect_error)
 }    
 
 print "
-<br/>
-<div id='liveAdsMainDiv'  >
 
-<button id='categoryBox' name='categoryBox'  style='position:fixed;top:80px;left:5px; width:auto; background:none;cursor:none;border:none;font-weight:bold; text-shadow: 1px 1px 1px gray; font-size: 25px; text-align:left; color: darkred; font-family:book antiqua;'    > $adCategory</button>
-  
+ <button id='categoryBox' name='categoryBox'  style='float:left; width:auto; background:none;cursor:none;border:none;font-weight:bold; text-shadow: 1px 1px 1px gray; font-size: 25px; text-align:left; color: darkred; font-family:book antiqua;'    > $adCategory</button>
 
-
-<select id='sortByBox' name=$adCategory  style='position:fixed; z-index: 19px; top: 80px; right: 5px; width:auto; cursor:pointer;border:outset;  border-radius: 5px;box-shadow: 1px 2px 2px gray;font-wieght:bold;font-size: 17px; text-align:left; color:black; font-family:book antiqua;' onchange='sortBy(value)' onmouseover='homeBgColorOn1(this)' onmouseout='homeBgColorOff1(this)'>
+<select id='sortByBox' name=$adCategory  style='float:right;  z-index: 19px; top: 80px; right: 5px; width:auto; cursor:pointer;border:outset;  border-radius: 5px;box-shadow: 1px 2px 2px gray;font-wieght:bold;font-size: 17px; text-align:left; color:black; font-family:book antiqua;' onchange='sortBy(value)' onmouseover='homeBgColorOn1(this)' onmouseout='homeBgColorOff1(this)'>
 <option value='ORDENA'>SORT BY</option>
-
 <option value='cityAsc' style='background: #ebebe0;text-shadow: 1px 1px 1px gray;' >City(Asc)</option>
 <option value='cityDsc' style='background: #ebebe0;text-shadow: 1px 1px 1px gray;' >City(Dsc)</option>
 <option value='priceAsc' style='background:  #d6d6c2;text-shadow: 1px 1px 1px gray;' >Price(Asc)</option>
@@ -288,7 +282,9 @@ print "
 <br/><option value='titleAsc' style='background:  #adad85;text-shadow: 1px 1px 1px gray;' >Title(Asc)</option>
 <option value='titleDsc' style='background:  #adad85;text-shadow: 1px 1px 1px gray;' >Title(Dsc)</option>
 </select >
-
+</td></tr>
+<tr><td>
+ 
 
 <div id='liveAds1' class='subDivsClass' > ";
 //START TABLE 1 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -334,13 +330,8 @@ print "<label>".$ref3."</label></a>";
 print "<textarea   maxlength='100' cols='18' rows='3'  required  readonly >".$ref4."</textarea>
 <br/>
 
-
 <button id='$videoLink' onclick='goToVideo(id)'   style='background:none;border:none;font-weight:bold;font-family:book antiqua;font-size:15px;color:darkred;text-shadow: 1px 1px 1px gray;cursor:pointer;'>$videoYesNo</button>
-
-
 <br/>
-
-
 <a ".$h."='https://www.mimarketa.com/mmMain/mmEnglish/mmLiveAdsSingleAd.php?country=".$country."&state=".$state."&county=".$county."&adId=".$ref6."&title=".$ref1."&sessionId=".$ref7."&picUrl1=".$ref5." '  >";  
 
     if($ref5 !='noFoto')
@@ -652,10 +643,38 @@ print " </div> ";
 //END TABLE 5
 
 
-print " </div> ";
+
 ?>
 
+    
+
+</section>
+</main>  
+</div>
+<!-- CONTAINER 3 -->
+<div class='container3' >
+
+<canvas style='visibility:hidden;border:outset;' width="80" height="80" id="canvas">canvas</canvas>
+
+<div id="loadingDiv"   ><br/><br/>Please wait.<br /><br/>Uploading Ad.........<br/><br/><br/><br/><br/><br/></div>
 
 
+<footer>   <?php include 'mmFooter.php'; ?>  </footer>
+</div>
+
+
+</div>   
+
+
+<script src="mmHeader.js"></script> 
+<script src="mmLiveAds.js"></script> 
+<script> 
+checkViewportWidth();
+
+</script>
+<script> 
+
+css();
+</script>
 </body>
 </html>  
