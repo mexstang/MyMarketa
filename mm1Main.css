@@ -1,0 +1,700 @@
+
+/* HEADER PAGE*/
+ #header
+{
+width:99%;
+background:transparent;
+border:none;
+}
+
+#navBar
+{
+width:99%;
+font-weight:bold;
+text-align:center;
+margin:auto;
+padding: 10px;
+border-radius: 2px 2px 2px 2px;
+box-shadow: 3px 3px 3px 3px gray;
+background:linear-gradient(to right,  #699c69 , white ,  #699c69 );   
+}
+
+#navBar button
+{ 
+font-weight:bold;
+font-size: 1.5em;
+font-family:Book Antiqua;
+text-shadow: 1px 1px 1px gray;
+cursor:pointer;
+background:transparent;
+border:none;
+}
+
+#passCounty, #countyTextBox, #passState
+{
+color:#699c69;
+font-family:Book Antiqua;
+font-size: 1.5em;
+text-shadow: 1px 1px 1px gray;
+background:transparent;
+border:none;
+text-align:center;
+cursor:pointer;
+}
+
+#searchBox
+{
+font-family:Book Antiqua;
+font-size: 1.5em;
+text-shadow: 1px 1px 1px gray;
+z-index:2;
+cursor:pointer;
+background:transparent;
+border-width:.2em;
+border:outset;
+border-radius:5px 1px 1px 5px;
+box-shadow: 1px 1px 1px gray;
+padding:2px;
+width:30%;
+}
+
+#searchButton
+{
+font-family:Book Antiqua;
+font-size: 1.5em;
+text-shadow: 1px 1px 1px gray;
+z-index:2;
+cursor:pointer;
+color:black;
+border-width:1px;
+border:outset;
+border-radius:1px 10px 10px 1px;
+box-shadow: 1px 1px 1px gray;
+padding:2px;
+padding-right:5px;
+} 
+
+.logo
+{
+float:left;
+z-index:3;
+vertical-align:top;
+margin-top:2px;
+
+}
+
+#changeLocationBox
+{
+font-family:Book Antiqua;
+font-size: 1.5em;
+text-shadow: 1px 1px 1px gray;
+z-index:2;
+cursor:pointer;
+color: green;
+border:none;
+background:transparent;
+}
+
+#adCity
+{
+font-family:Book Antiqua;
+font-size: 1.5em;
+text-shadow: 1px 1px 1px gray;
+z-index:2;
+cursor:pointer;
+background:transparent;
+border-width:1px;
+border:outset;
+border-radius:1px 1px 1px 1px;
+box-shadow: 1px 1px 1px gray;
+padding:2px;
+}
+
+/* END HEADER  SECTION*/
+
+
+
+/* FOOTER */
+
+ 
+
+/* HOME PAGE > Parent Div */
+ 
+.container1
+{
+  text-align: center;
+  width:100%;
+  margin-bottom:10px;
+  display: flex;
+  flex-wrap: wrap;
+  background:transparent;
+  border:none;
+} 
+ 
+
+.container2
+{
+ grid-area: categories;
+ text-align:center;
+ background:white;
+}
+
+.container3
+{
+ grid-area: footer;
+ text-align:center;
+ background:white;
+}
+/* END CONTAINERS*/
+
+.landingPageCategoryButtons input
+{
+
+background:transparent;
+border:none;
+font-size:1.5em;
+font-family:Book Antiqua;
+font-weight:bold;
+text-align:center;
+cursor:pointer;
+padding:10px;
+text-shadow: 1px 1px 1px gray;
+}
+
+
+/* END ENGLISH PAGE*/
+
+
+ 
+
+
+/* FOOTER */
+
+
+footer
+{
+position:fixed;
+bottom: 0px;
+width:98.7%;
+text-align:center;
+z-index:3;
+border-radius:2px;
+box-shadow: 2px 2px 2px 3px gray;
+background:linear-gradient(to right,  #699c69 , white ,  #699c69 );   
+margin: 0 auto;
+}
+
+/* END FOOTER */
+
+
+/* POST PAGE*/
+
+.postSection form
+{ 
+width:96%;
+border:outset;
+border-radius:20px;
+box-shadow: 1px 1px 1px gray;
+margin: auto;
+background:linear-gradient(to right,  #699c69 , white ,  #699c69 );
+} 
+
+.postSection input
+{ 
+width: 70%;
+height:auto;
+font-size:25px;
+font-family:book antiqua;
+border:outset;
+border-radius:10px;
+box-shadow: 1px 1px 1px gray;
+text-align:center;
+}
+.postSection  select
+{ 
+width: 70%;
+height:auto;
+font-size:25px;
+font-weight:bold;
+font-family:book antiqua;
+border:outset;
+border-radius:10px;
+box-shadow: 1px 1px 1px gray;
+text-align:center;
+}
+.postSection  textarea
+{ 
+width: 70%;
+height:auto;
+font-size:25px;
+border:outset;
+border-radius:10px;
+box-shadow: 1px 1px 1px gray;
+}
+
+
+.postSection button
+{ 
+width: 40%;
+font-size:35px;
+font-weight:bold;
+font-family:book antiqua;
+border:outset;
+border-radius:10px;
+box-shadow: 1px 1px 1px gray;
+background:linear-gradient(to right,  #699c69 , white ,  #699c69 ); 
+margin:5px;
+}
+
+
+#loadingDiv
+{visibility:hidden;}
+
+
+
+/* END POST PAGE*/
+
+
+
+/* HELP PAGE*/
+
+
+
+
+#helpSection
+{
+text-align:center;
+width:100%;
+z-index:1;
+background:transparent;   
+margin-top:10px;
+margin-bottom:50px;
+border:none;
+}
+
+#helpSection form
+{ 
+width: auto;
+height:auto;
+border:outset;
+border-radius:20px;
+box-shadow: 1px 1px 1px gray;
+margin:5px;
+background:linear-gradient(to right,  #699c69 , white ,  #699c69 );
+} 
+
+#helpSection input
+{ 
+width: 70%;
+height:auto;
+font-size:25px;
+font-family:book antiqua;
+border:outset;
+border-radius:10px;
+box-shadow: 1px 1px 1px gray;
+text-align:center;
+}
+
+#helpSection  textarea
+{ 
+width: 70%;
+height:auto;
+font-size:25px;
+border:outset;
+border-radius:10px;
+box-shadow: 1px 1px 1px gray;
+}
+
+
+#helpSection button
+{ 
+width: 40%;
+font-size:35px;
+font-weight:bold;
+font-family:book antiqua;
+border:outset;
+border-radius:10px;
+box-shadow: 1px 1px 1px gray;
+background:linear-gradient(to right,  #699c69 , white ,  #699c69 ); 
+margin:5px;
+}
+
+
+
+/* END HELP PAGE*/
+
+/*LOCATION PAGE*/
+
+#hiddenCountySection
+{ 
+visibility:hidden;
+}
+#locationSection1
+{ 
+;
+width: 98%;
+height:100%;
+border:none;
+text-align:center;
+margin:auto;
+padding:20px;
+}
+
+#locationSection2
+{ 
+width: auto;
+height:auto;
+border:none;
+text-align:center;
+padding:20px;
+}
+#locationSection3
+{ 
+width: 98%;
+border:none;
+text-align:center;
+margin:auto;
+padding:20px;
+font-weight:normal;
+font-family:book antiqua;
+font-size:20px;
+}
+button
+{
+background:transparent;
+border:none;
+font-size:20px;
+font-family:Book Antiqua;
+font-weight:bold;
+cursor:pointer;
+text-shadow: 1px 1px 1px gray;
+    
+    
+}
+
+
+
+
+span
+{
+
+left:20px;
+width:95%;
+height:auto;
+overflow-y:scroll;
+background: transparent;
+border:none;
+color:black;
+font-size:22px;
+font-family:Book Antiqua;
+font-weight:bold;
+text-shadow:1px 2px 3px gray;
+visibility:hidden;
+    
+}
+
+
+
+/* END LOCATION PAGE*/
+
+
+
+/* LIVE ADS PAGE */
+
+
+/*  LIVE ADS MAIN TABLE */
+
+
+#adsSection
+{ 
+z-index: 1;
+top:10px;
+margin:auto;
+border:none;
+text-align:center;
+
+}
+
+.subDivsClass
+{ 
+
+float:left;
+z-index: 1;
+width: 300px;
+height:auto;
+text-align:center;
+text-transform: capitalize;
+background:transparent;
+margin:10px;
+color:black;
+
+}
+
+.adDivClass
+{ 
+color:black;
+border:outset;
+border-radius: 15px;
+width: 300px;
+height:427px;
+max-width:300px;
+max-height:430px;
+text-align:center;
+font-family:Book Antiqua;
+font-weight:Bold; 
+font-size:25px;
+text-transform: capitalize;
+background:transparent;
+margin:10px;
+cursor:pointer;
+box-shadow: 1px 1px 2px gray;
+
+}
+
+
+#adsSection label
+{  
+cursor:pointer; 
+width: 248px;
+border:none;
+color:black;
+padding:15px;
+}
+
+#adsSection textarea
+{ 
+color:black;
+width: 248px;
+border:none;
+background:transparent;
+text-align:center;
+text-transform: capitalize;
+font-family:Book Antiqua;
+font-size:25px;
+overflow-x: hidden;  
+overflow-y: scroll;
+resize: none;
+}
+
+#adsSection img
+{ 
+width:300px;
+height: 211px;
+max-width:301px;
+max-height:212px;
+border:none;
+border-radius: 2px  2px  16px  16px       ;  
+}
+
+
+/* END LIVE ADS PAGE */
+
+
+
+/* SINGLE AD PAGE */
+
+
+#singleAdSection
+{
+z-index: 1;
+border:none;
+text-align:center;
+margin:auto;
+padding-top:10px;
+}
+
+#singleAdSection label
+{ 
+border:none;
+background:transparent;
+font-size:25px;
+font-family:Book Antiqua;
+font-weight:bold; 
+padding-right:10px;
+}
+
+#singleAdSection button
+{ 
+border:none;
+background:transparent;
+font-size:20px;
+cursor:pointer;
+font-family:Book Antiqua;
+font-weight:bold; 
+color:maroon;
+}
+
+#emailButtonxxxx
+{
+color:black;
+width:auto;
+height:auto;
+background:linear-gradient(to right,  #699c69 , white ,  #699c69 ); 
+font-size:20px;
+font-weight:bold;
+font-family:book antiqua;
+border: none;
+text-shadow:1px 1px 4px gray ; 
+cursor:pointer;
+border-radius: 15px;
+box-shadow:1px 1px 4px gray ;    
+padding:10px;
+}
+
+#singleAdSection textarea
+{ 
+overflow:hidden;
+text-align:left;
+border:none;
+word-wrap: break-word;
+background:transparent;
+font-size:1.5em;
+font-family:Book Antiqua;
+ 
+}
+
+
+#singleAdSection a
+{  
+font-size:20px;
+font-family:Book Antiqua;
+font-weight:bold;
+
+}
+
+
+#singleAdSection img
+{
+margin: 10px;
+border:outset;
+border-radius: 15px;
+max-width:550px;
+max-height:550px;
+height: auto;  
+ box-shadow:2px 3px 5px 1px;
+}
+
+
+/* CHAT   ------------------------------------------------- */
+#sendMessageButtonDiv
+{
+z-index: 4;
+background:linear-gradient(to right,  #699c69 , white ,  #699c69 );  
+border-radius:5px;
+}
+
+#chatDiv
+{box-shadow:1px 1px 4px gray ;
+    background:linear-gradient(to right,  #699c69 , white ,  #699c69 );  
+width:30%;
+z-index: 5;
+margin:auto;
+border:outset;
+border-radius:15px;
+padding:10px;
+text-align:center;
+font-size:1.5em;
+font-family:book antiqua;
+font-weight:bold;
+}
+
+#chatDiv textarea
+{
+width:90%;
+border-radius: 5px 5px 5px 5px;
+resize: none;
+font-size:1.5em;
+font-family:book antiqua;
+box-shadow:1px 1px 4px gray ;
+background:transparent;
+margin:10px;
+text-align:center;
+}
+
+
+#chatBuyerEmail
+{  
+width:90%;
+border-radius: 5px 5px 5px 5px;
+resize: none;
+font-size:1.5em;
+font-family:book antiqua;
+box-shadow:1px 1px 4px gray ;
+background:transparent;
+text-align:center;
+margin:10px;
+}
+
+
+#chatButton
+{ 
+cursor:pointer;
+padding:10px;
+border:outset;
+border-width : 4px;
+border-radius: 25px 25px 25px 25px;
+background-image: linear-gradient( to right,  #699c69 , white ,  #699c69 ); 
+font-size:1em;
+font-family:book antiqua;
+font-weight:bold;
+margin-top:4px;
+box-shadow:1px 1px 5px gray ;
+}
+
+
+
+/* END SINGLE AD PAGE */
+
+
+
+
+/* PORTAL PAGE */
+.portalSection
+{
+background:linear-gradient(to right, #699c69, white, #699c69);
+    font-size: 2em;
+    text-align:center;
+    padding:20px;
+    width:50%;
+    border-radius:20px;
+    margin: auto;
+     box-shadow: 5px 5px 5px gray; 
+}
+
+#activateAd
+{
+font-weight:normal;
+font-family:book antiqua;
+font-size: 1.5em;
+border:outset;
+border-radius:25px;
+background:linear-gradient(to right, #699c69, white, #699c69);
+text-align:center;
+padding:15px; box-shadow: 5px 5px 5px gray; 
+}
+#deleteAd
+{
+font-weight:normal;
+font-family:book antiqua;
+font-size: 1.5em;
+border:outset;
+border-radius:25px;
+background:linear-gradient(to right, maroon, white, maroon);
+text-align:center;
+padding:15px;
+ box-shadow: 5px 5px 5px gray; 
+}
+/* END PORTAL PAGE */
+
+
+/* MOBILE PHONES SECTION */
+@media (min-width:320px)  
+{    }
+
+
+/* END MOBILE PHONE SECTION */
+
+
+
+
+
